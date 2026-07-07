@@ -313,7 +313,7 @@ function App() {
       );
 
       const response = await axios.post(
-        "http://localhost:8081/api/upload",
+        `${import.meta.env.VITE_API_URL}/api/upload`,
         formData,
         {
           headers: {
