@@ -15,7 +15,7 @@ public class MlServiceClient {
     private RestTemplate restTemplate;
 
     private static final String ML_API_URL =
-            "http://localhost:8000/analyze";
+            "https://ai-resume-analyzer-umra.onrender.com";
 
     public String analyzeResume(String resumeText) {
 
