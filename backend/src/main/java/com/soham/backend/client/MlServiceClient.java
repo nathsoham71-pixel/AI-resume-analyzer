@@ -1,6 +1,7 @@
 package com.soham.backend.client;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -14,8 +15,8 @@ public class MlServiceClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final String ML_API_URL =
-            "https://ai-resume-analyzer-umra.onrender.com";
+    @Value("${ml.service.url}")
+    private String mlApiUrl;
 
     public String analyzeResume(String resumeText) {
 
@@ -32,7 +33,7 @@ public class MlServiceClient {
 
             ResponseEntity<String> response =
                     restTemplate.postForEntity(
-                            ML_API_URL,
+                            mlApiUrl + "/analyze",
                             request,
                             String.class
                     );
