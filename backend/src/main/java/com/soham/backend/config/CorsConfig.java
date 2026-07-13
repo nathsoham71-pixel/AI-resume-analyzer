@@ -20,7 +20,8 @@ public class CorsConfig {
                         .allowedOriginPatterns(
                                 "http://localhost:5173",
                                 "http://localhost:5174",
-                                "https://*.vercel.app"
+                                "https://*.vercel.app",
+                                "https://*.onrender.com"
                         )
                         .allowedMethods("*")
                         .allowedHeaders("*");
